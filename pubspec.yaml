@@ -1,6 +1,6 @@
 name: epic_route_transitions
-description: A new Flutter package project.
-version: 0.0.1
+description: An epic library to handling screen transitions with animations.
+version: 0.0.2
 homepage: https://github.com/velascoandres/route_transitions
 
 environment:

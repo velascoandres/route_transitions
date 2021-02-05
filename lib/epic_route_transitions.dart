@@ -2,14 +2,20 @@ library epic_route_transitions;
 
 import 'package:flutter/material.dart';
 
+/// Default duration time as a constant
 const DEFAULT_DURATION = Duration(milliseconds: 200);
 
+/// Animation types
 enum AnimationType {
   normal,
   fadeIn,
 }
 
-class EpicRouteTransitions {
+/// Main class. [context] the BuildContext
+/// [child] the target widget to navigate, [animation] animation type
+/// [duration] (optional) transition duration by default is 200 milliseconds, 
+/// [replacement] if push or pushReclacement
+class EpicRouteTransitions { 
   final BuildContext context;
   final Widget child;
   final AnimationType animation;
@@ -37,11 +43,13 @@ class EpicRouteTransitions {
     }
   }
 
+  // Normal transition controller
   void _normalTransition() {
     final route = MaterialPageRoute(builder: (_) => this.child);
     this._pushPage(route);
   }
 
+ // FadeInTransition controller
   void _fadeInTransition({
     Duration duration = DEFAULT_DURATION,
   }) {
@@ -60,6 +68,7 @@ class EpicRouteTransitions {
     this._pushPage(route);
   }
 
+  /// Make the navigation
   void _pushPage(PageRoute route) {
     if (this.replacement) {
       Navigator.pushReplacement(context, route);
