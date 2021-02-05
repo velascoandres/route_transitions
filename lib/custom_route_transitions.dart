@@ -1,4 +1,4 @@
-library route_transitions;
+library custom_route_transitions;
 
 import 'package:flutter/material.dart';
 
@@ -9,14 +9,14 @@ enum AnimationType {
   fadeIn,
 }
 
-class RouteTransitions {
+class CustomRouteTransitions {
   final BuildContext context;
   final Widget child;
   final AnimationType animation;
   final Duration duration;
   final bool replacement;
 
-  RouteTransitions({
+  CustomRouteTransitions({
     @required this.context,
     @required this.child,
     this.animation = AnimationType.normal,
